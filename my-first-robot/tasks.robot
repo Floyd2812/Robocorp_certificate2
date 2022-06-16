@@ -12,6 +12,7 @@ Library           RPA.Tables
 Library           RPA.PDF
 Library           RPA.Archive
 Library           RPA.Dialogs
+Library           RPA.RPA.RobotLogListener
 
 
 *** Keywords ***
@@ -19,7 +20,7 @@ Ask User to Proceed
     ${proceed}    Set Variable   False
     Add icon      Success
     Add heading   Let's get them robots!!
-    Add submit buttons    buttons=yay,nay    default=Yes
+    Add submit buttons    buttons=Yes,No    default=Yes
     ${result}=    Run dialog
     IF   $result.submit == "Yes"
         ${proceed}    Set Variable    True
